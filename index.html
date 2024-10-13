@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Guru - Your Gateway to Top Indian Colleges</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Admission Guru</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="index3.html">Contact Us</a></li>
+                <li><a href="#">Search Colleges</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover India's Top Engineering Colleges</h1>
+            <p>Your dream college is just a click away. Explore IITs, NITs, and more!</p>
+
+            <!-- Search Form with Autocomplete -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="search" id="college-search" placeholder="Search for colleges..." required>
+                    <button class="search-btn" type="submit"><span>Search</span></button>
+                </div>
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>            
+        </div>
+    </section>
+
+    <section class="featured-colleges">
+        <h2>Featured Colleges</h2>
+        <div class="card-wrapper">
+            <ul class="card-list">
+                <!-- Reusing the college card structure -->
+                <li class="card-item">
+                    <a href="index2.html" class="card-link">
+                        <img src="Img alte/IIT bombay.jpg" alt="IIT Bombay" class="card-image">
+                        <h3>IITs</h3>
+                        <p>One of the most prestigious institutions in India.</p>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="Img alte/NIT-Trichy.jpg" alt="IIT Bombay" class="card-image">
+                        <h3>NITs</h3>
+                        <p>Again! One of the most prestigious institutions in India.</p>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="Img alte/Bits pilani.jpg" alt="IIT Bombay" class="card-image">
+                        <h3>Private</h3>
+                        <p>A great chance at engineering education with some money!</p>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="Img alte/BIT mesra.jpeg" alt="IIT Bombay" class="card-image">
+                        <h3>GFTI</h3>
+                        <p>Government Funded technical institutes, another great option to look out for!</p>
+                    </a>
+                </li>
+                <li class="card-item">
+                    <a href="#" class="card-link">
+                        <img src="Img alte/IIIT hyderabad.jpg" alt="IIT Bombay" class="card-image">
+                        <h3>IIITs</h3>
+                        <p>Great option for studying pure electronics and information technology!</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Choose Admission Guru?</h2>
+        <p>We provide detailed and up-to-date information on the best engineering colleges in India.</p>
+        <h2>Compare and Decide</h2>
+        <p>Compare colleges based on their location, facilities, and rankings.</p>
+        <h2>Admission Guidance</h2>
+        <p>Get insights into the application process, scholarships, and more.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Admission Guru. All rights reserved.</p>
+    </footer>
+
+    <!-- Include the script for autocomplete functionality -->
+    <script>
+    const colleges = [
+    "IIT Bombay", "IIT Delhi", "IIT Madras", "IIT Kanpur", "IIT Kharagpur", "IIT Roorkee", "IIT Guwahati",
+    "IIT BHU", "IIT Hyderabad", "IIT Dhanbad", "IIT Indore", "IIT Mandi", "IIT Jodhpur", "IIT Ropar", "IIT Patna",
+    "IIT Bhubaneswar", "IIT Gandhinagar", "IIT Palakkad", "IIT Tirupati", "IIT Goa", "IIT Jammu", "IIT Dharwad",
+    "NIT Trichy", "NIT Surathkal", "NIT Warangal", "NIT Rourkela", "NIT Durgapur", "NIT Calicut", "NIT Jamshedpur",
+    "NIT Kurukshetra", "NIT Patna", "NIT Hamirpur", "NIT Silchar", "NIT Raipur", "NIT Meghalaya", "NIT Agartala",
+    "NIT Manipur", "NIT Mizoram", "NIT Arunachal Pradesh", "NIT Nagaland", "NIT Uttarakhand", "NIT Srinagar",
+    "BITS Pilani", "BITS Hyderabad", "BITS Goa", "IIIT Allahabad", "IIIT Delhi", "IIIT Hyderabad", "IIIT Bangalore",
+    "IIIT Gwalior", "IIIT Kota", "IIIT Vadodara", "IIIT Guwahati", "IIIT Pune", "IIIT Lucknow", "IIIT Srirangam",
+    "IIIT Kancheepuram", "IIIT Bhagalpur", "IIIT Bhopal", "IIIT Dharwad", "IIIT Una", "VIT Vellore", "VIT Bhopal",
+    "MIT Manipal", "SRM Institute of Science and Technology", "Amrita Vishwa Vidyapeetham", "Anna University",
+    "Jamia Millia Islamia", "Jadavpur University", "Delhi Technological University", "Netaji Subhas Institute of Technology",
+    "Punjab Engineering College", "College of Engineering Pune", "Veermata Jijabai Technological Institute (VJTI)",
+    "Thapar Institute of Engineering and Technology", "National Institute of Technology Agartala",
+    "Indian Institute of Space Science and Technology", "Indian Statistical Institute", "Indian Institute of Science Bangalore",
+    "Osmania University", "Jawaharlal Nehru Technological University", "Rajiv Gandhi Institute of Petroleum Technology",
+    "College of Engineering Trivandrum", "Chandigarh University", "KIIT Bhubaneswar", "Lovely Professional University",
+    "Jaypee Institute of Information Technology", "University of Hyderabad", "Guru Gobind Singh Indraprastha University",
+    "University of Calcutta", "Shiv Nadar University", "SASTRA Deemed University", "Sathyabama Institute of Science and Technology",
+    "R.V. College of Engineering", "PES University", "MS Ramaiah Institute of Technology", "BMS College of Engineering",
+    "KLE Technological University", "Visvesvaraya National Institute of Technology", "Sri Sivasubramaniya Nadar College of Engineering",
+    "Harcourt Butler Technical University", "Sardar Vallabhbhai National Institute of Technology", "Indian Institute of Information Technology Design and Manufacturing Kurnool",
+    "Bharati Vidyapeeth Deemed University College of Engineering", "Shri Ramdeobaba College of Engineering and Management",
+    "Dayananda Sagar College of Engineering", "Acharya Institute of Technology", "Siddaganga Institute of Technology",
+    "Maharaja Agrasen Institute of Technology", "Guru Nanak Dev Engineering College", "Bangalore Institute of Technology",
+    "Jawaharlal Nehru University (JNU)", "Assam Engineering College", "Aligarh Muslim University", "Motilal Nehru National Institute of Technology",
+    "National Institute of Technology Sikkim", "Indian Institute of Technology Bhilai", "Indian Institute of Technology Palakkad",
+    "Sree Chitra Thirunal College of Engineering", "Muffakham Jah College of Engineering and Technology", "LNM Institute of Information Technology",
+    "Indian Institute of Information Technology Kottayam", "Government College of Engineering Kannur", "NIT Puducherry", "IIIT Nagpur", 
+    "Rajiv Gandhi University of Knowledge Technologies", "Indian Institute of Engineering Science and Technology Shibpur", 
+    "Shri Guru Gobind Singhji Institute of Engineering and Technology", "Government Engineering College Thrissur", "Andhra University College of Engineering", 
+    "National Institute of Technology Goa", "National Institute of Technology Andhra Pradesh", "JSS Academy of Technical Education", "MVJ College of Engineering"
+    ,"Army institute of technology, Pune", "AIT"
+];
+
+const searchInput = document.getElementById('college-search');
+const suggestionBox = document.getElementById('suggestions');
+
+// Function to show the suggestion box
+function showSuggestions() {
+    suggestionBox.classList.add('show');
+}
+
+// Function to hide the suggestion box
+function hideSuggestions() {
+    suggestionBox.classList.remove('show');
+}
+
+// Listen for input in the search field
+searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    suggestionBox.innerHTML = ''; // Clear previous suggestions
+
+    if (query.length > 0) {
+        const filteredColleges = colleges.filter(college => college.toLowerCase().includes(query));
+
+        if (filteredColleges.length > 0) {
+            showSuggestions(); // Show the suggestions box
+
+            // Show the suggestions
+            filteredColleges.forEach(college => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.textContent = college;
+
+                // Add click event to suggestion
+                suggestionItem.addEventListener('click', function() {
+                    searchInput.value = college; // Set clicked suggestion to input field
+                    suggestionBox.innerHTML = ''; // Clear suggestion box
+                    hideSuggestions(); // Hide the suggestion box
+                });
+
+                suggestionBox.appendChild(suggestionItem);
+            });
+        } else {
+            hideSuggestions(); // Hide if no matches
+        }
+    } else {
+        hideSuggestions(); // Hide if input is empty
+    }
+});
+
+// Hide suggestions when clicking outside the search bar
+document.addEventListener('click', function(e) {
+    if (!suggestionBox.contains(e.target) && e.target !== searchInput) {
+        hideSuggestions();
+    }
+});
+    </script>
+
+    <script src="//code.tidio.co/8nko1lctiru2jprrfileq6tblahyebad.js" async></script>
+</body>
+</html>
+

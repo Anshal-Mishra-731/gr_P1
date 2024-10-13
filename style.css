@@ -1,0 +1,171 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header Styles */
+header {
+    background: #2d3e50;
+    color: #ffffff;
+    padding: 15px 30px;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #d75622;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffdd00;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #35424a, #3a3f44);
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.cta {
+    display: inline-block;
+    background: #e8491d;
+    color: #ffffff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.cta:hover {
+    background-color: #ff5733;
+}
+
+/* Section Styles */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Card List */
+.card-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-list .card-item {
+    list-style-type: none;
+    width: 300px;
+    margin: 10px;
+    transform: perspective(1000px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-list .card-item:hover {
+    transform: perspective(1000px) rotateY(15deg) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation for "pop-in" effect on hover */
+.card-list .card-item:hover .card-link {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-list .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-list .card-link:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-list .card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-list .card-item:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-list h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.card-list p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Footer Styles */
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+
+
